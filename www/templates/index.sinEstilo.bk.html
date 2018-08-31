@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
+    <title>Samples!</title>
+</head>
+
+
+<body>
+    <a href="/start" type="button" class="btn btn-success">Start Sensor</a>
+    <a href="/stop" type="button" class="btn btn-danger">Stop Sensor</a>
+    <div class="form-group">
+            <label for="exampleFormControlSelect1">Select seconds</label>
+            <select class="form-control" id="selectSeconds">
+              <option value="1000" selected>1</option>
+              <option value="2000">2</option>
+              <option value="5000">5</option>
+              <option value="10000">10</option>
+              <option value="60000">60</option>
+            </select>
+    </div>
+    
+    <table id="samplesTable" class="table">
+        <thead>
+          <tr>
+            <td>
+                <th scope="col">#</th>
+                <th scope="col">temperature</th>
+                <th scope="col">humidity</th>
+                <th scope="col">pressure</th>
+                <th scope="col">windspeed</th>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+            <TR ALIGN=CENTER>    
+                <TH>average last ten samples</TH>
+                <TD id="average"></TD>
+                <TD id="average_temperature"></TD>
+                <TD id="average_humidity"></TD>
+                <TD id="average_pressure"></TD>
+                <TD id="average_windspeed"></TD>
+            </TR>
+            
+            <TR ALIGN=CENTER>    
+                <TH>last sample</TH>
+                <TD id="last"></TD>
+                <TD id="temperature"></TD>
+                <TD id="humidity"></TD>
+                <TD id="pressure"></TD>
+                <TD id="windspeed"></TD>
+            </TR>
+        </tbody>
+    </table>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="/static/js/index.js"></script>
+
+</body>
+
+</html>

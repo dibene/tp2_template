@@ -1,28 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
+  <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
-    <title>Hello, world!</title>
-</head>
+    <title>Sensor's Samples</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<body>
+    <!-- Custom fonts for this template -->
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- Plugin CSS -->
+    <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
+    <!-- Custom styles for this template -->
+    <link href="/static/css/freelancer.min.css" rel="stylesheet">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </head>
 
-</body>
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Sensor's Samples</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sensorConfiguration">Sensor Configuration</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#samples">Samples</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <h1 class="text-uppercase mb-0">Sensor's Samples</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Santiago Dibene - TdP-II-2018</h2>
+      </div>
+    </header>
+
+    <!-- sensorConfiguration Grid Section -->
+    <section class="sensorConfiguration" id="sensorConfiguration">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Sensor Configuration</h2>
+        <hr class="star-dark mb-5">
+        <div class="row" >
+            <div class="col-sm"></div>
+            <div class="col-sm text-center">
+              <a href="/start" type="button" class="btn btn-success">Start Sensor</a><br>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm text-center">
+              <a href="/stop" type="button" class="btn btn-danger">Stop Sensor</a>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- samples Section -->
+    <section class="bg-primary text-white mb-0" id="samples">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Samples</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <a id="startSamples" type="button" class="btn btn-success">Start Samples</a><br>
+                </div>
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <a id="stopSamples" type="button" class="btn btn-danger">Stop Samples</a>
+                </div>
+                <div class="col-sm"></div>
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="exampleFormControlSelect1">Select seconds</label>
+            <select class="form-control" id="selectSeconds">
+              <option value="1000" selected>1</option>
+              <option value="2000">2</option>
+              <option value="5000">5</option>
+              <option value="10000">10</option>
+              <option value="60000">60</option>
+            </select>
+        </div>
+        <div class="text-center mt-4">
+        <table id="samplesTable" class="table">
+            <thead>
+              <tr>
+                <td>
+                    <th scope="col">#</th>
+                    <th scope="col">temperature</th>
+                    <th scope="col">humidity</th>
+                    <th scope="col">pressure</th>
+                    <th scope="col">windspeed</th>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+                <TR ALIGN=CENTER>    
+                    <TH>average last ten samples</TH>
+                    <TD id="average"></TD>
+                    <TD id="average_temperature"></TD>
+                    <TD id="average_humidity"></TD>
+                    <TD id="average_pressure"></TD>
+                    <TD id="average_windspeed"></TD>
+                </TR>
+                
+                <TR ALIGN=CENTER>    
+                    <TH>last sample</TH>
+                    <TD id="last"></TD>
+                    <TD id="temperature"></TD>
+                    <TD id="humidity"></TD>
+                    <TD id="pressure"></TD>
+                    <TD id="windspeed"></TD>
+                </TR>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Dibene Santiago tdp 2 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/static/js/jqBootstrapValidation.js"></script>
+    <script src="/static/js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/js/freelancer.min.js"></script>
+    <script src="/static/js/index.js"></script>
+
+  </body>
 
 </html>
